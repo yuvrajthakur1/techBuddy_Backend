@@ -1,0 +1,60 @@
+const stackInterviewQuestions = [
+  // Basics (15)
+  { questionText: "What is a stack in data structures?" },
+  { questionText: "What are the main operations of a stack?" },
+  { questionText: "What is the difference between push and pop operations?" },
+  { questionText: "What is the LIFO principle in stacks?" },
+  { questionText: "How do you check if a stack is empty or full?" },
+  { questionText: "What are some real-life examples of stacks?" },
+  { questionText: "What is the difference between stack and queue?" },
+  { questionText: "How is a stack different from an array?" },
+  { questionText: "What is the role of peek/top operation in a stack?" },
+  { questionText: "What happens if you try to pop from an empty stack?" },
+  { questionText: "What happens if you push into a full stack?" },
+  { questionText: "What are the advantages and disadvantages of stacks?" },
+  { questionText: "What are the applications of stacks in programming?" },
+  { questionText: "How do you represent a stack in memory?" },
+  { questionText: "What is stack overflow?" },
+
+  // Intermediate (20)
+  { questionText: "How can a stack be implemented using arrays?" },
+  { questionText: "How can a stack be implemented using linked lists?" },
+  { questionText: "What is the time complexity of push and pop operations?" },
+  { questionText: "What is the difference between static stack and dynamic stack?" },
+  { questionText: "What is the use of stacks in recursion?" },
+  { questionText: "How does a stack support function call management in programming languages?" },
+  { questionText: "What is the difference between call stack and runtime stack?" },
+  { questionText: "How are stacks used in expression evaluation?" },
+  { questionText: "What is infix, prefix, and postfix notation in stacks?" },
+  { questionText: "How does a stack help in converting infix expressions to postfix?" },
+  { questionText: "How are stacks used in undo-redo operations?" },
+  { questionText: "How do stacks help in syntax parsing?" },
+  { questionText: "What are multiple stacks and why are they used?" },
+  { questionText: "What is a circular stack?" },
+  { questionText: "What is the role of stack in depth-first search (DFS) algorithm?" },
+  { questionText: "How do you reverse a string using a stack?" },
+  { questionText: "How do you check for balanced parentheses using a stack?" },
+  { questionText: "What is the difference between bounded and unbounded stacks?" },
+  { questionText: "How do stacks handle memory allocation?" },
+  { questionText: "What are some limitations of stacks?" },
+
+  // Advanced (15)
+  { questionText: "What is the difference between stack memory and heap memory?" },
+  { questionText: "How does recursion use the stack internally?" },
+  { questionText: "What is the difference between stack frame and activation record?" },
+  { questionText: "How does stack unwinding work in exception handling?" },
+  { questionText: "What is a double-ended stack (deque)?" },
+  { questionText: "What are monotonic stacks and where are they used?" },
+  { questionText: "What is the difference between software stack and hardware stack?" },
+  { questionText: "How are stacks used in backtracking algorithms?" },
+  { questionText: "What is the difference between dynamic stack and static stack?" },
+  { questionText: "How can two stacks be implemented in a single array?" },
+  { questionText: "What is stack permutation?" },
+  { questionText: "What are some problems that can be solved using stacks?" },
+  { questionText: "What is the role of stack in memory management?" },
+  { questionText: "How are stacks used in compilers?" },
+  { questionText: "What are the key differences between stack and priority queue?" }
+];
+
+
+module.exports = stackInterviewQuestions;

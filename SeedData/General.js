@@ -1,0 +1,135 @@
+const dsaInterviewQuestions = [
+  // Basics (10)
+  { questionText: "What is Data Structures and Algorithms (DSA)?" },
+  { questionText: "Why are data structures important in programming?" },
+  { questionText: "What is the difference between data structures and algorithms?" },
+  { questionText: "What is the difference between linear and non-linear data structures?" },
+  { questionText: "What are the main types of data structures?" },
+  { questionText: "What is the difference between static and dynamic data structures?" },
+  { questionText: "What is an abstract data type (ADT)?" },
+  { questionText: "What is the difference between logical and physical data structures?" },
+  { questionText: "What is the difference between primitive and non-primitive data structures?" },
+  { questionText: "What is the role of time complexity in algorithms?" },
+
+  // Complexity Analysis (10)
+  { questionText: "What is time complexity and why is it important?" },
+  { questionText: "What is space complexity?" },
+  { questionText: "What is Big-O notation?" },
+  { questionText: "What is Big-Omega notation?" },
+  { questionText: "What is Big-Theta notation?" },
+  { questionText: "What is the difference between best, worst, and average case complexity?" },
+  { questionText: "What is the difference between polynomial time and exponential time algorithms?" },
+  { questionText: "What is amortized analysis?" },
+  { questionText: "What is the difference between recursive and iterative solutions?" },
+  { questionText: "Why is algorithm analysis important before coding?" },
+
+  // Arrays (10)
+  { questionText: "What is an array and its applications?" },
+  { questionText: "How do arrays differ from linked lists?" },
+  { questionText: "What are the advantages of arrays?" },
+  { questionText: "What are the disadvantages of arrays?" },
+  { questionText: "What is the difference between 1D and 2D arrays?" },
+  { questionText: "What is a jagged array?" },
+  { questionText: "What is the difference between array length and capacity?" },
+  { questionText: "How are arrays stored in memory?" },
+  { questionText: "What is the time complexity of array insertion?" },
+  { questionText: "What is the time complexity of array deletion?" },
+
+  // Strings (10)
+  { questionText: "What is a string in programming?" },
+  { questionText: "How are strings stored in memory?" },
+  { questionText: "What is string immutability?" },
+  { questionText: "What is string pattern matching?" },
+  { questionText: "What is the difference between substring and subsequence?" },
+  { questionText: "What are common string searching algorithms?" },
+  { questionText: "What is the difference between a string and a character array?" },
+  { questionText: "What is the difference between palindrome and anagram?" },
+  { questionText: "What is the difference between naive and efficient string search?" },
+  { questionText: "What are some real-world applications of strings?" },
+
+  // Searching (10)
+  { questionText: "What is linear search?" },
+  { questionText: "What is binary search?" },
+  { questionText: "What are the requirements for binary search?" },
+  { questionText: "What is the time complexity of linear search?" },
+  { questionText: "What is the time complexity of binary search?" },
+  { questionText: "What are interpolation search and its use cases?" },
+  { questionText: "What is exponential search?" },
+  { questionText: "What is ternary search?" },
+  { questionText: "What is hashing?" },
+  { questionText: "What are collision resolution techniques in hashing?" },
+
+  // Sorting (10)
+  { questionText: "What is sorting and why is it important?" },
+  { questionText: "What is bubble sort?" },
+  { questionText: "What is insertion sort?" },
+  { questionText: "What is selection sort?" },
+  { questionText: "What is merge sort?" },
+  { questionText: "What is quicksort?" },
+  { questionText: "What is heap sort?" },
+  { questionText: "What is counting sort?" },
+  { questionText: "What is radix sort?" },
+  { questionText: "What is the difference between stable and unstable sorting algorithms?" },
+
+  // Stacks & Queues (10)
+  { questionText: "What is a stack?" },
+  { questionText: "What are stack applications?" },
+  { questionText: "What is a queue?" },
+  { questionText: "What are queue applications?" },
+  { questionText: "What is the difference between stack and queue?" },
+  { questionText: "What is a circular queue?" },
+  { questionText: "What is a priority queue?" },
+  { questionText: "What is deque (double-ended queue)?" },
+  { questionText: "How can stacks be used for expression evaluation?" },
+  { questionText: "What are real-world applications of queues?" },
+
+  // Linked Lists (10)
+  { questionText: "What is a linked list?" },
+  { questionText: "What are the types of linked lists?" },
+  { questionText: "What is the difference between singly and doubly linked lists?" },
+  { questionText: "What is a circular linked list?" },
+  { questionText: "What are the advantages of linked lists over arrays?" },
+  { questionText: "What are the disadvantages of linked lists?" },
+  { questionText: "What is the time complexity of inserting into a linked list?" },
+  { questionText: "What is the time complexity of deleting from a linked list?" },
+  { questionText: "How do linked lists store memory?" },
+  { questionText: "What are some real-world applications of linked lists?" },
+
+  // Trees (10)
+  { questionText: "What is a tree in data structures?" },
+  { questionText: "What is a binary tree?" },
+  { questionText: "What is a binary search tree (BST)?" },
+  { questionText: "What is a balanced tree?" },
+  { questionText: "What is an AVL tree?" },
+  { questionText: "What is a B-tree?" },
+  { questionText: "What is a heap tree?" },
+  { questionText: "What is the difference between complete and full binary trees?" },
+  { questionText: "What is tree traversal?" },
+  { questionText: "What is the difference between DFS and BFS in trees?" },
+
+  // Graphs (10)
+  { questionText: "What is a graph in data structures?" },
+  { questionText: "What is the difference between directed and undirected graphs?" },
+  { questionText: "What is a weighted graph?" },
+  { questionText: "What is adjacency matrix?" },
+  { questionText: "What is adjacency list?" },
+  { questionText: "What is BFS in graphs?" },
+  { questionText: "What is DFS in graphs?" },
+  { questionText: "What is Dijkstra’s algorithm?" },
+  { questionText: "What is the Bellman-Ford algorithm?" },
+  { questionText: "What is a minimum spanning tree (MST)?" },
+
+  // Advanced Topics (10)
+  { questionText: "What is dynamic programming?" },
+  { questionText: "What are the key steps in solving DP problems?" },
+  { questionText: "What is the difference between greedy and dynamic programming?" },
+  { questionText: "What is memoization?" },
+  { questionText: "What is tabulation in DP?" },
+  { questionText: "What is divide and conquer strategy?" },
+  { questionText: "What is backtracking?" },
+  { questionText: "What is branch and bound?" },
+  { questionText: "What is NP-completeness?" },
+  { questionText: "What is the difference between P and NP problems?" }
+];
+
+module.exports = dsaInterviewQuestions;

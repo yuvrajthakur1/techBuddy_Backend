@@ -1,0 +1,60 @@
+const linkedListInterviewQuestions = [
+  // Basics (15)
+  { questionText: "What is a linked list and how is it different from an array?" },
+  { questionText: "What are the types of linked lists?" },
+  { questionText: "What is a singly linked list?" },
+  { questionText: "What is a doubly linked list?" },
+  { questionText: "What is a circular linked list?" },
+  { questionText: "What are the advantages of linked lists over arrays?" },
+  { questionText: "What are the disadvantages of linked lists compared to arrays?" },
+  { questionText: "What is a node in a linked list?" },
+  { questionText: "What are the components of a node in a linked list?" },
+  { questionText: "What is the head of a linked list?" },
+  { questionText: "What is the tail of a linked list?" },
+  { questionText: "How do you traverse a linked list?" },
+  { questionText: "What happens if you try to access an element by index in a linked list?" },
+  { questionText: "How do you check if a linked list is empty?" },
+  { questionText: "What is the role of pointers in a linked list?" },
+
+  // Intermediate (20)
+  { questionText: "How do you insert a node at the beginning of a linked list?" },
+  { questionText: "How do you insert a node at the end of a linked list?" },
+  { questionText: "How do you insert a node at a specific position in a linked list?" },
+  { questionText: "How do you delete a node from a linked list?" },
+  { questionText: "How do you delete the first node in a linked list?" },
+  { questionText: "How do you delete the last node in a linked list?" },
+  { questionText: "How do you delete a node by value in a linked list?" },
+  { questionText: "How do you search for an element in a linked list?" },
+  { questionText: "What is the time complexity of searching in a linked list?" },
+  { questionText: "What is the time complexity of insertion and deletion in linked lists?" },
+  { questionText: "How do you reverse a linked list?" },
+  { questionText: "How do you find the length of a linked list?" },
+  { questionText: "How do you detect a loop in a linked list?" },
+  { questionText: "What is Floyd’s cycle detection algorithm?" },
+  { questionText: "How do you remove a loop in a linked list?" },
+  { questionText: "How do you merge two sorted linked lists?" },
+  { questionText: "How do you split a linked list into two halves?" },
+  { questionText: "What are sentinel nodes in linked lists?" },
+  { questionText: "What are dummy nodes and why are they used?" },
+  { questionText: "What is the difference between singly and doubly linked lists in terms of operations?" },
+
+  // Advanced (15)
+  { questionText: "What is a skip list?" },
+  { questionText: "What is the difference between circular linked list and doubly linked list?" },
+  { questionText: "How do you check if a linked list is a palindrome?" },
+  { questionText: "How do you find the middle element of a linked list?" },
+  { questionText: "How do you find the nth node from the end of a linked list?" },
+  { questionText: "How do you detect and remove duplicate nodes in a linked list?" },
+  { questionText: "How do you implement stack using linked list?" },
+  { questionText: "How do you implement queue using linked list?" },
+  { questionText: "What is a self-referential structure in linked lists?" },
+  { questionText: "How are linked lists used in dynamic memory allocation?" },
+  { questionText: "What are unrolled linked lists?" },
+  { questionText: "What are XOR linked lists?" },
+  { questionText: "What are some real-world applications of linked lists?" },
+  { questionText: "What are the limitations of linked lists compared to other data structures?" },
+  { questionText: "How does garbage collection affect linked lists?" }
+];
+
+
+module.exports = linkedListInterviewQuestions;
