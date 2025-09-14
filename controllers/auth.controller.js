@@ -1,7 +1,9 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-
+const dotenv = require('dotenv');
+dotenv.config();
+const isProduction = process.env.NODE_ENV === 'production';
 
 //resgistercontroller
 const resgisterController = async (req, res) => {
@@ -76,7 +78,8 @@ const loginController = async (req, res) => {
     //Ye hua cookie mei save
      res.cookie('token', token, {
       httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
-      secure: false, // Use secure cookies in production
+      secure: isProduction, // Use secure cookies in production
+      sameSite:none,
       maxAge: 3600000, // 1 hour in milliseconds
     });
 
