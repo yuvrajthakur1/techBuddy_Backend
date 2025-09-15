@@ -131,7 +131,7 @@ const forgotController = async (req, res) => {
   await user.save();
 
   // 3. Send it to user's email
-  const resetURL = `http://localhost:5173/reset-password/${resetToken}`;
+  const resetURL = `https://techbuddyfrontend.netlify.app/reset-password/${resetToken}`;
 
   const message = `
     <h1>You have requested a password reset</h1>
