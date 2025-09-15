@@ -23,13 +23,12 @@ const practiceAssesaiController = async (req, res) => {
  Please provide constructive feedback in simple language that is understandable easily and a score out of 100 for the response. Your response must be in a JSON format with two keys: "feedback" (string) and "score" (number). Do not add any other text outside the JSON object.`;
 
   try {
-    console.log("Content Generate Karwane to Agyr");
     const result = await genAI.models.generateContent({
     model: "gemini-2.5-flash",
     contents: prompt,
   });
 
- console.log("Content Generate Karwane to Agyr22");
+
 
 
    // Extract text from the first candidate

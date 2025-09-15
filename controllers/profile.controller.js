@@ -2,7 +2,6 @@ const User = require('../models/User');
 
 
 exports.profileController = async(req,res)=>{
-    console.log(req.user);
      const {id,email} =  req.user;
      try {
          const user = await User.findById(id);
