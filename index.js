@@ -14,7 +14,7 @@ app.use(cookieParser());
 connectDB();
 // This is all About cross origin connection
 app.use(cors({
-  origin: "http://localhost:5173", // your React app URL
+  origin: ["http://localhost:5173", "https://techbuddyfrontend.netlify.app"],// your React app URL
   methods: ["GET", "POST", "PUT", "DELETE"], // allowed methods
   credentials: true // if using cookies
 }));

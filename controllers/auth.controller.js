@@ -82,7 +82,7 @@ const loginController = async (req, res) => {
      res.cookie('token', token, {
       httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
       secure: isProduction, // Use secure cookies in production
-      sameSite:false,
+      sameSite:"none",
       maxAge: 3600000, // 1 hour in milliseconds
     });
 
@@ -102,8 +102,8 @@ const loginController = async (req, res) => {
 const logoutController = async (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    secure: false, // keep true if using HTTPS
-    sameSite: "strict",
+    secure: isProduction, // keep true if using HTTPS
+    sameSite: "none",
   });
   res.status(200).json({ message: "Logged out successfully" });
 }
