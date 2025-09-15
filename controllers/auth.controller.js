@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const crypto = require('crypto');
 const sendEmail = require('../config/email');
 dotenv.config();
-const isProduction = process.env.NODE_ENV === 'production';
+
 
 
 //resgistercontroller
@@ -81,9 +81,10 @@ const loginController = async (req, res) => {
     //Ye hua cookie mei save
      res.cookie('token', token, {
       httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
-      secure: isProduction, // Use secure cookies in production
+      secure: true, // Use secure cookies in production
       sameSite:"none",
       maxAge: 3600000, // 1 hour in milliseconds
+      path:"/"
     });
 
     user = await User.findOne({ email });
@@ -102,8 +103,9 @@ const loginController = async (req, res) => {
 const logoutController = async (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    secure: isProduction, // keep true if using HTTPS
+    secure: true, // keep true if using HTTPS
     sameSite: "none",
+    path:"/"
   });
   res.status(200).json({ message: "Logged out successfully" });
 }
