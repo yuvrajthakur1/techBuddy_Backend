@@ -2,8 +2,11 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const dotenv = require('dotenv');
+const crypto = require('crypto');
+const sendEmail = require('../config/email');
 dotenv.config();
 const isProduction = process.env.NODE_ENV === 'production';
+
 
 //resgistercontroller
 const resgisterController = async (req, res) => {
@@ -105,4 +108,89 @@ const logoutController = async (req, res) => {
   res.status(200).json({ message: "Logged out successfully" });
 }
 
-module.exports = {resgisterController,loginController,logoutController};
+
+//forgot password route
+
+const forgotController = async (req, res) => {
+
+  // 1. Get user based on POSTed email
+  const { email } = req.body;
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    return res.status(404).json({ message: 'No user found with that email address.' });
+  }
+
+  
+  // 2. Generate the random reset token using JWT
+  const resetToken = crypto.randomBytes(32).toString("hex");
+  user.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");
+  user.resetPasswordExpires = Date.now() + 15 * 60 * 1000; // 15 min
+  await user.save();
+
+  // 3. Send it to user's email
+  const resetURL = `http://localhost:5173/reset-password/${resetToken}`;
+
+  const message = `
+    <h1>You have requested a password reset</h1>
+    <p>Please go to this link to reset your password:</p>
+    <a href="${resetURL}" target="_blank">${resetURL}</a>
+  `;
+
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: 'Your Password Reset Token (Valid for 10 min)',
+      html: message,
+    });
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Token sent to email!',
+    });
+  } catch (err) {
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpires = undefined;
+    await user.save();
+    return res.status(500).json({ message: 'There was an error sending the email. Try again later.' });
+  }
+};
+
+
+
+// reset password controller
+
+const resetController =  async (req, res) => {
+  try {
+    const { token } = req.params;
+    const { password } = req.body;
+
+    console.log("token aur password to milgya")
+    //Find user by hashed token that was stored 
+   const hashedToken = crypto.createHash("sha256").update(token).digest("hex");
+     console.log("token hash karida")
+  const user = await User.findOne({
+    resetPasswordToken: hashedToken,
+    resetPasswordExpires: { $gt: Date.now() },
+  });
+
+     console.log("User milaki nahi dekh rhe");
+    if (!user) return res.status(400).json({ message: "Invalid or expired token" });
+      
+     console.log("User milgya ");
+    user.password = password;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpires = undefined;
+    await user.save();
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Password has been reset successfully.',
+    });
+  } catch (error) {
+    // This will catch JWT errors like 'TokenExpiredError' or 'JsonWebTokenError'
+    return res.status(400).json({ message: 'Token is invalid or has expired.' });
+  }
+};
+
+module.exports = {resgisterController,loginController,logoutController,forgotController,resetController};

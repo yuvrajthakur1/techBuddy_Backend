@@ -39,17 +39,8 @@ app.use("/api",profileRoute);
 
 app.use('/api/practice',practiceRoutes);
 
-
-
 //route for fetching attempts recents
 app.use("/api/attempts",attemptRoutes);
-
-
-
-
-
-
-
 
 
 
