@@ -12,16 +12,28 @@ app.use(express.urlencoded({extended:true}));
 app.use(helmet());
 app.use(cookieParser());
 connectDB();
-// This is all About cross origin connection
+
+
+
+// This is all About cross origin connection for production only when pushing code to productino change it 
+
+// app.use(cors({
+//   origin: ["http://localhost:5173", "https://techbuddyfrontend.netlify.app"],// your React app URL
+//   methods: ["GET", "POST", "PUT", "DELETE"], // allowed methods
+//   credentials: true // if using cookies
+// }));
+
 app.use(cors({
-  origin: ["http://localhost:5173", "https://techbuddyfrontend.netlify.app"],// your React app URL
-  methods: ["GET", "POST", "PUT", "DELETE"], // allowed methods
-  credentials: true // if using cookies
+  origin:"http://localhost:5173",
+  credentials:true
 }));
+
+
 const authRoutes = require('./routes/auth.routes');
 const profileRoute = require('./routes/userProfile.routes');
 const practiceRoutes = require('./routes/practice.routes');
 const attemptRoutes = require('./routes/fetchAttempt.routes');
+const adminRoutes = require("./routes/Admin/admin.routes");
 
 
 
@@ -41,6 +53,10 @@ app.use('/api/practice',practiceRoutes);
 
 //route for fetching attempts recents
 app.use("/api/attempts",attemptRoutes);
+
+//routes for admin data information
+app.use("/api/admin",adminRoutes);
+
 
 
 

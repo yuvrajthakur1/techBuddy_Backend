@@ -35,9 +35,17 @@ const userSchema = new mongoose.Schema({
     required: false,
     trim: true
   },
+  role: {
+      type:String,
+      enum:['user','admin'],
+      default:'user'
+  },
   resetPasswordToken: String,
   resetPasswordExpires: Date,
+},{
+  timestamps:true
 });
+
 
 // Middleware to hash the password before saving the user document
 // 'pre' hook runs before a save event on the document

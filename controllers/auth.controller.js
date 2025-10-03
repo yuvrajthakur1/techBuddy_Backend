@@ -71,8 +71,8 @@ const loginController = async (req, res) => {
    
 
 
-    // Token Crested
-    const token = jwt.sign({id:user._id,email:user.email},process.env.JWT_SECRET,
+    // Token Created
+    const token = jwt.sign({id:user._id,email:user.email,role:user.role},process.env.JWT_SECRET,
       {
         expiresIn:'1h',
       },)
@@ -81,10 +81,10 @@ const loginController = async (req, res) => {
     //Ye hua cookie mei save
      res.cookie('token', token, {
       httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
-      secure: true, // Use secure cookies in production
-      sameSite:"none",
+      secure: false, // Use secure cookies in production
+      // sameSite:"none",
       maxAge: 3600000, // 1 hour in milliseconds
-      path:"/"
+      // path:"/"
     });
 
     user = await User.findOne({ email });
@@ -103,7 +103,7 @@ const loginController = async (req, res) => {
 const logoutController = async (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    secure: true, // keep true if using HTTPS
+    secure: false, // keep true if using HTTPS
     sameSite: "none",
     path:"/"
   });

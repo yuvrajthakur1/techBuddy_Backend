@@ -31,6 +31,8 @@ const attemptSchema = new mongoose.Schema({
     type: Date,
     default: Date.now // Sets the date of the attempt automatically
   }
+},{
+  timestamps:true
 });
 
 // Create the Mongoose model from the schema
