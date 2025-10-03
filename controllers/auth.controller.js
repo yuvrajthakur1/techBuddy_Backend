@@ -115,6 +115,8 @@ const logoutController = async (req, res) => {
 
 const forgotController = async (req, res) => {
 
+
+  console.log("inside forgot paswword");
   // 1. Get user based on POSTed email
   const { email } = req.body;
   const user = await User.findOne({ email });

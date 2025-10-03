@@ -6,6 +6,7 @@ dotenv.config();
 
 const  verifyToken = (req,res,next) => {
     const token = req?.cookies?.token;
+    console.log(token);
     if(!token) return res.status(401).json({msg:"No Token"});
     try {
       const decode =  jwt.verify(token,process.env.JWT_SECRET);
