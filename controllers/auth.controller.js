@@ -82,9 +82,9 @@ const loginController = async (req, res) => {
      res.cookie('token', token, {
       httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
       secure: false, // Use secure cookies in production
-      // sameSite:"none",
+      sameSite:"none",
       maxAge: 3600000, // 1 hour in milliseconds
-      // path:"/"
+      path:"/"
     });
 
     user = await User.findOne({ email });
